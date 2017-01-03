@@ -1,0 +1,12 @@
+{% extends 'app1/base.html' %}
+{% block content%}
+{% for post in posts%}
+<div class="post">
+<div class="date">
+{{post.published_date}}
+</div>
+<h2><a href ="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a></h2>
+<p><b>{{post.akt_prawny|linebreaksbr}}</b></p>
+</div>
+{%endfor%}
+{%endblock content%}
